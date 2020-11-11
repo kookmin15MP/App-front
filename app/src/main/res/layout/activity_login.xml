@@ -93,6 +93,17 @@
                 android:layout_gravity="center"
                 android:id="@+id/loginButton"/>
 
+            <Button
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:background="@color/colorPrimaryDark"
+                android:text="회원 가입"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:id="@+id/signupButton"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
