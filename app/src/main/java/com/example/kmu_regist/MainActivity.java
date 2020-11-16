@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         final Button statisticsButton = (Button) findViewById(R.id.statisticsButton);
         final Button scheduleButton = (Button) findViewById(R.id.scheduleButton);
         final LinearLayout notice = (LinearLayout) findViewById(R.id.notice);
+        final Button add_lecture = (Button)findViewById(R.id.add_lecture);
 
         courseButton.setOnClickListener(new View.OnClickListener(){
             @Override

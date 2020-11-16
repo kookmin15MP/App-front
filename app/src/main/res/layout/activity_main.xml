@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:id="@+id/scheduleButton"
-            android:text=" 시간표 "
+            android:text=" 강의 등록 "
             android:textStyle="bold"
             android:textColor="#FFFFFF"
             android:textSize="18dp"

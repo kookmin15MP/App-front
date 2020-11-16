@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -64,6 +65,7 @@ public class CourseFragment extends Fragment {
     private Spinner termSpinner;
     private ArrayAdapter areaAdapter;
     private Spinner areaSpinner;
+    private Button add_lecture;
 
     private String courseUniversity ="";
     private String courseYear = "";
@@ -73,12 +75,10 @@ public class CourseFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle b) {
         super.onActivityCreated(b);
-
         final RadioGroup courseUniversityGroup = (RadioGroup) getView().findViewById(R.id.courseUniversityGroup);
         yearSpinner = (Spinner) getView().findViewById(R.id.yearSpinner);
         termSpinner = (Spinner) getView().findViewById(R.id.termSpinner);
         areaSpinner = (Spinner) getView().findViewById(R.id.areaSpinner);
-
         courseUniversityGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {

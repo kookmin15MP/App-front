@@ -94,17 +94,29 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="493dp"
         android:layout_margin="10dp"
         android:background="#ffffff">
 
         <ListView
+            android:id="@+id/courseListView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/courseListView"
-            android:dividerHeight="10dp"
-            android:divider="#ffffff"></ListView>
+            android:divider="#ffffff"
+            android:dividerHeight="10dp"></ListView>
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/add_lecture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="강의 추가하기"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/colorPrimaryDark"/>
 
 </LinearLayout>
