@@ -36,6 +36,7 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
     }
+
     private void sendSignupRequest(SignupDataSet signupDataSet) {
         final boolean isRight = false;
 

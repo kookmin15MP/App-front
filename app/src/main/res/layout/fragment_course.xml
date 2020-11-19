@@ -107,16 +107,4 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/add_lecture"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="강의 추가하기"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        android:textColor="#ffffff"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:background="@color/colorPrimaryDark"/>
-
 </LinearLayout>

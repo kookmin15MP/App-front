@@ -65,7 +65,6 @@ public class CourseFragment extends Fragment {
     private Spinner termSpinner;
     private ArrayAdapter areaAdapter;
     private Spinner areaSpinner;
-    private Button add_lecture;
 
     private String courseUniversity ="";
     private String courseYear = "";

@@ -16,7 +16,7 @@
         android:layout_marginRight="30dp">
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/lectur_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -24,7 +24,7 @@
             android:hint = "강의 이름" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/professor_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -32,7 +32,7 @@
             android:hint = "교수 이름" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName3"
+            android:id="@+id/lecture_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -40,7 +40,7 @@
             android:hint="강의 시간" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName4"
+            android:id="@+id/limited_people"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"

@@ -1,8 +1,10 @@
 package com.example.kmu_regist;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -14,11 +16,19 @@ import androidx.fragment.app.FragmentTransaction;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class MainActivity extends AppCompatActivity {
 
     private ListView noticeListView;
     private NoticeListAdapter adapter;
     private List<Notice> noticeList;
+
+    EditText lecture_name, professor_name, limited_people, lecture_time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +51,19 @@ public class MainActivity extends AppCompatActivity {
         final Button statisticsButton = (Button) findViewById(R.id.statisticsButton);
         final Button scheduleButton = (Button) findViewById(R.id.scheduleButton);
         final LinearLayout notice = (LinearLayout) findViewById(R.id.notice);
-        final Button add_lecture = (Button)findViewById(R.id.add_lecture);
+        final Button add_lecture = (Button) findViewById(R.id.add_lec_btn);
+
+        lecture_name=findViewById(R.id.lectur_name);
+        lecture_time=findViewById(R.id.lecture_time);
+        limited_people=findViewById(R.id.limited_people);
+        professor_name=findViewById(R.id.professor_name);
+
+//        add_lecture.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                addLec(createRequest());
+//            }
+//        });
 
         courseButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -86,6 +108,34 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public AddlecDataSet createRequest(){
+        AddlecDataSet addlecDataSet = new AddlecDataSet();
+        addlecDataSet.setLecture_name(lecture_name.getText().toString());
+        addlecDataSet.setLecture_time(lecture_time.getText().toString());
+        addlecDataSet.setProfessor_name(professor_name.getText().toString());
+        addlecDataSet.setLimited_people(limited_people.getText().toString());
+
+        return addlecDataSet;
+    }
+
+    public void addLec(AddlecDataSet addlecDataSet) {
+        Call<AddlecResponse> addlecResponseCall = LecClient.addlecture().addLec(addlecDataSet);
+        addlecResponseCall.enqueue(new Callback<AddlecResponse>() {
+            @Override
+            public void onResponse(Call<AddlecResponse> call, Response<AddlecResponse> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(MainActivity.this, "saved successfully", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(MainActivity.this, "Request failed", Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<AddlecResponse> call, Throwable t) {
+                Toast.makeText(MainActivity.this, "Request failed" + t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
+    }
     private long lastTimeBackPressed;
 
     @Override
